@@ -22,4 +22,4 @@ To showcase a basic social network prototype and learn how to implement user reg
 This project is intended for educational purposes.  
 
 ## Contact
-For questions or suggestions: [кrebcoding@gmail.com]
+For questions or suggestions: [rebcoding@gmail.com]
