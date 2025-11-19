@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Successful login
             $_SESSION['user_id'] = $user['id'];
 
-            header("Location: edit.php");
+            header("Location: ../index.php");
             exit;
 
         } else {
