@@ -1,213 +1,151 @@
+/* ========================================
+   Global Reset & Typography
+   ======================================== */
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
-    background-color: #e6ecf0; 
+    background-color: #e6ecf0;
     color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
 }
 
-/* Header */
+/* ========================================
+   Links (global)
+   ======================================== */
+a {
+    color: #0073b1;
+    text-decoration: none;
+}
 
+a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   Header
+   ======================================== */
 .header {
-    width: 100%;
-    padding: 20px;
-    background-color: #fff;
+    background: #fff;
     border-bottom: 1px solid #ccc;
+    padding: 12px 0;
 }
 
 .navbar {
     width: 755px;
     margin: 0 auto;
-}
-
-.menu a {
-    margin: 0 5px;
-}
-
-/* Centered container */
-.login-wrapper {
-    width: 360px;
-    margin: 80px auto;
-    background: #fff;
-    border: 1px solid #ccc;
-    padding: 20px;
-}
-
-/* Title */
-.login-wrapper h2 {
-    font-size: 18px;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-/* Message (error/success) */
-.login-message {
-    background: #fff3cd;
-    border: 1px solid #e0c86d;
-    padding: 8px;
-    margin-bottom: 10px;
-    font-size: 13px;
-}
-
-/* Form labels */
-.login-wrapper label {
-    font-size: 13px;
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
-}
-
-/* Inputs */
-.login-wrapper input[type="email"],
-.login-wrapper input[type="password"] {
-    width: 100%;
-    padding: 6px;
-    border: 1px solid #ccc;
-    margin-top: 4px;
-    font-size: 13px;
-}
-
-/* Submit button */
-.login-wrapper button {
-    width: 100%;
-    margin-top: 15px;
-    padding: 8px;
-    border: 1px solid #999;
-    background: #fff;
-    cursor: pointer;
-    font-size: 13px;
-    color: #0073b1;
-}
-
-.login-wrapper button:hover {
-    background: #f5f8fa;
-}
-
-/* "Sign up" link */
-.login-wrapper .small-link {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 12px;
-}
-
-.login-wrapper a {
-    color: #0073b1;
-    text-decoration: none;
-}
-
-.login-wrapper a:hover {
-    text-decoration: underline;
-}
-
-/* Already logged in page */
-.logged-in-box {
-    width: 360px;
-    margin: 80px auto;
-    background: #fff;
-    border: 1px solid #ccc;
-    padding: 20px;
-}
-
-.logged-in-box h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-.logged-in-box a {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-    color: #0073b1;
-}
-
-/* Register wrapper */
-.register-wrapper {
-    width: 360px;
-    margin: 80px auto;
-    background: #fff;
-    border: 1px solid #ccc;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-}
-
-/* Heading */
-.register-wrapper h2 {
-    text-align: center;
-    font-size: 18px;
-}
-
-/* Form inputs and buttons use same styles as post-form */
-.register-wrapper .post-form input[type="text"],
-.register-wrapper .post-form input[type="email"],
-.register-wrapper .post-form input[type="password"],
-.register-wrapper .post-form button {
-    width: 100%;
-    font-size: 12px;
-    padding: 6px;
-    margin-top: 4px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-.register-wrapper .post-form button {
-    cursor: pointer;
-    background: #fff;
-    color: #0073b1;
-    border: 1px solid #ccc;
-}
-
-.register-wrapper .post-form button:hover {
-    background: #f5f8fa;
-}
-
-/* "Sign in" link */
-.register-wrapper .small-link {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 12px;
-}
-
-.register-wrapper a {
-    color: #0073b1;
-    text-decoration: none;
-}
-
-.register-wrapper a:hover {
-    text-decoration: underline;
-}
-
-
-/* Main container */
-.profile-container {
-    width: 755px;
-    margin: 0 auto;
-    margin-top: 10px;
-}
-
-/* Top banner */
-.profile-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
+}
+
+.menu a,
+.btns-head a {
+    font-size: 13px;
+    margin: 0 5px;
+}
+
+/* ========================================
+   Centered Forms (Login / Register / Logged-in)
+   ======================================== */
+.login-wrapper,
+.register-wrapper,
+.logged-in-box {
+    width: 360px;
+    margin: 60px auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+/* Titles */
+.login-wrapper h2,
+.register-wrapper h2,
+.logged-in-box h2 {
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Messages */
+.login-message {
+    background: #fff3cd;
+    border: 1px solid #e0c86d;
+    color: #856404;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+/* Labels */
+.login-wrapper label,
+.register-wrapper label {
+    display: block;
+    font-weight: bold;
+    margin: 12px 0 4px;
+}
+
+/* Inputs (login + register) */
+.login-wrapper input[type="email"],
+.login-wrapper input[type="password"],
+.register-wrapper input[type="text"],
+.register-wrapper input[type="email"],
+.register-wrapper input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+}
+
+/* Buttons (login + register) */
+.login-wrapper button,
+.register-wrapper button {
+    width: 100%;
+    padding: 9px;
+    margin-top: 15px;
+    background: #fff;
+    border: 1px solid #999;
+    color: #0073b1;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-wrapper button:hover,
+.register-wrapper button:hover {
+    background: #f5f8fa;
+}
+
+/* Small links below forms */
+.small-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+/* ========================================
+   Main Profile Layout
+   ======================================== */
+.profile-container {
+    width: 755px;
+    margin: 10px auto 0;
+}
+
+/* Profile Header (avatar + buttons) */
+.profile-header {
+    background: #fff;
     border: 1px solid #ccc;
     padding: 12px;
-    font-size: 14px;
-}
-
-.title-journal {
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-}
-
-.title-journal h2 {
-    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .profile-header .left {
@@ -216,242 +154,253 @@ body {
 }
 
 .profile-header img.avatar {
-    width: 60px;  /* чуть больше */
+    width: 60px;
     height: 60px;
     border: 1px solid #ccc;
-    margin-right: 10px;
+    margin-right: 12px;
+    object-fit: cover;
 }
 
 .profile-header .user-info strong {
     font-size: 14px;
-    color: #333;
 }
 
-/* Header right buttons */
+/* Right buttons */
 .profile-header .right a,
 .profile-header .right button {
-    padding: 4px 8px;
+    padding: 5px 10px;
     border: 1px solid #ccc;
-    background-color: #fff;
-    cursor: pointer;
-    font-size: 12px;
-    text-decoration: none;
+    background: #fff;
     color: #0073b1;
+    font-size: 12px;
+    margin-left: 6px;
+    cursor: pointer;
 }
 
 .profile-header .right a.logout {
     color: #333;
 }
 
-/* Main content */
+/* Title above posts */
+.title-journal {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.title-journal h2 {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Two-column layout */
 .profile-main {
     display: flex;
     gap: 10px;
 }
 
-/* Posts area */
 .posts {
-    width: 555px;
+    width: 493px;
+    flex-shrink: 0;
 }
 
-/* Forms */
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+/* Pin/Unpin button */
+.post { position: relative; }
+.pin-button {
+    position: absolute;
+    top:5px;
+    right:5px;
+    display:none;
+    font-size:12px;
+    background:#0073b1;
+    color:#fff;
+    padding:2px 5px;
+    cursor:pointer;
+    text-decoration:none;
+}
+.pin-button { display:inline-block; }
+.pinned-label {
+    font-size:11px;
+    color:#ff4500;
+    font-weight:bold;
+    margin-bottom:4px;
+}
+.sidebar .action-btn {
+    display:block;
+    padding:6px 10px;
+    margin-top:6px;
+    border:1px solid #0073b1;
+    background:#0073b1;
+    color:#fff;
+    text-align:center;
+    text-decoration:none;
+    font-size:13px;
+}
+
+/* ========================================
+   Post Form & Edit Form
+   ======================================== */
 .post-form,
-.edit-container,
-.edit-form {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    font-size: 12px;
-    margin-top: 10px;
-}
-
-.post-form textarea,
-.post-form input[type="text"],
-.edit-form textarea,
-.edit-form input[type="text"] {
-    width: 100%;
-    font-size: 12px;
-    padding: 4px;
-    border: 1px solid #ccc;
-    margin-top: 2px;
-    color: #333;
-}
-
 .edit-container {
-    width: 555px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 12px;
+    margin-bottom: 10px;
 }
 
 .post-form textarea,
 .edit-form textarea {
-    height: 50px;
+    width: 100%;
+    height: 60px;
     resize: none;
-}
-
-/* Buttons */
-.post-form button,
-.edit-form button,
-.profile-header .right a,
-.profile-header .right button {
-    background-color: #fff;
     border: 1px solid #ccc;
-    font-size: 12px;
-    padding: 4px 8px;
-    cursor: pointer;
-    text-align: center;
-    color: #0073b1;
-    margin-top: 5px;
-    text-decoration: none; 
-}
-
-.post-form button:hover,
-.edit-form button:hover,
-.profile-header .right a:hover {
-    background-color: #f5f8fa;
-}
-
-/* Labels */
-.edit-form label,
-.post-form label {
-    display: block;
-    font-weight: bold;
+    padding: 6px;
     font-size: 12px;
     margin: 4px 0;
 }
 
-/* Single post */
-.post {
-    background-color: #fff;
+.post-form input[type="text"],
+.edit-form input[type="text"] {
+    width: 100%;
+    padding: 6px;
     border: 1px solid #ccc;
-    padding: 10px;
+    font-size: 12px;
+    margin: 4px 0;
+}
+
+.post-form button,
+.edit-form button {
+    padding: 6px 12px;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #0073b1;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 6px;
+}
+
+.post-form button:hover,
+.edit-form button:hover {
+    background: #f5f8fa;
+}
+
+/* ========================================
+   Single Post
+   ======================================== */
+.post {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 12px;
     margin-bottom: 10px;
     font-size: 12px;
-    margin-top: 10px;
-    color: #333;
+    line-height: 1.4;
 }
 
 .post small {
-    color: #555;
+    color: #777;
+    font-size: 11px;
 }
 
 /* No posts message */
-.posts .no-posts {
-    background-color: #fff;
+.no-posts {
+    background: #fff;
     border: 1px solid #ccc;
-    padding: 10px;
-    font-style: italic;
+    padding: 15px;
     text-align: center;
-    font-size: 12px;
-    color: #555;
-    margin-top: 10px;
-}
-
-/* Sidebar */
-.sidebar {
-    width: 258px;
-    height: 100%;
-    margin-top: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    font-size: 12px;
-    color: #333;
-}
-
-.sidebar h3 {
-    font-size: 14px;
-    margin-bottom: 8px;
-    padding-bottom: 2px;
-}
-
-.sidebar .info-row {
-    display: flex;
-    justify-content: space-between;
+    font-style: italic;
+    color: #777;
     margin-bottom: 10px;
 }
 
-.sidebar .info-label {
-    font-weight: bold;
-    color: #333;
-}
-
-.sidebar .back-button {
-    display: block;
-    width: 100%;
-    text-align: center;
-}
-
-/* Links */
-a {
-    color: #0073b1;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-/* Pagination */
-.pagination {
-    margin-top: 10px;
-    background-color: #fff;
-    padding: 10px;
+/* ========================================
+   Sidebar Blocks
+   ======================================== */
+.block-sidebar,
+.block-sidebar-info {
+    background: #fff;
     border: 1px solid #ccc;
-}
-
-.pagination a {
-    text-decoration: none;
-    color: #0073b1;
+    padding: 12px;
+    margin-bottom: 10px;
     font-size: 12px;
 }
 
-.pagination a:hover {
-    text-decoration: none;
+.block-sidebar-info h3 {
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
-/* Guest benefits block */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #555;
+}
+
+.info-value {
+    text-align: right;
+}
+
+/* ========================================
+   Pagination
+   ======================================== */
+.pagination {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.pagination a {
+    margin: 0 6px;
+    font-size: 12px;
+}
+
+/* ========================================
+   Guest Benefits (optional block)
+   ======================================== */
 .guest-benefits {
     margin-top: 30px;
     padding: 18px;
     border: 1px solid #c6c6c6;
     background: #fafafa;
     font-size: 14px;
-    border-radius: 4px;
 }
 
 .guest-benefits h3 {
     font-size: 16px;
-    margin-bottom: 10px;
-    color: #222;
+    margin-bottom: 12px;
     font-weight: bold;
 }
 
 .guest-benefits ul {
-    margin-left: 18px;
-    padding-left: 0;
+    margin-left: 20px;
 }
 
-.guest-benefits ul li {
+.guest-benefits li {
     margin-bottom: 6px;
     list-style-type: square;
-    color: #333;
 }
 
-.guest-benefits a {
-    color: #0074d9;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.guest-benefits a:hover {
-    text-decoration: underline;
-}
-
+/* ========================================
+   Footer
+   ======================================== */
 .footer {
-    width: 100%;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    margin-top: 10px;
+    padding: 15px 0;
+    background: #fff;
     text-align: center;
     font-size: 11px;
+    color: #777;
+    border: 1px solid #ccc;
 }
