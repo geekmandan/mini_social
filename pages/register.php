@@ -2,9 +2,12 @@
 session_start();
 require_once __DIR__ . '/../config/config.php';
 
-// If the user is already logged in — redirect them to the homepage
+// Redirect if already logged in
 if (isset($_SESSION['user_id'])) {
-    header("Location: ../index.php");
+    echo '<div class="logged-in-box">';
+    echo "<h2>You are already logged in 👍</h2>";
+    echo '<a href="../index.php">Go to homepage</a>';
+    echo '</div>';
     exit;
 }
 
@@ -13,70 +16,87 @@ $message = "";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = trim($_POST['password'] ?? '');
+    $nickname = trim($_POST['nickname'] ?? '');
 
-    // Checking if the email is valid
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $message = "Enter a valid email 🙂";
-    }
-    // Checking password strength
-    elseif (strlen($password) < 8) {
-        $message = "Password is too short! Minimum 8 characters 💪";
-    }
-    else {
-        // Checking if this email already exists
+    if ($email === "" || $password === "" || $nickname === "") {
+        $message = "Please fill all fields 😕";
+    } else {
+        // Check if email already exists
         $stmt = $pdo->prepare("SELECT id FROM users WHERE email = :email LIMIT 1");
         $stmt->execute([':email' => $email]);
-        $user = $stmt->fetch();
-
-        if ($user) {
-            $message = "This username is already taken 😐 Try another one.";
+        if ($stmt->fetch()) {
+            $message = "Email is already registered 😐";
         } else {
-            // Hashing the password
-            $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-
-            // Adding the user
-            $insert = $pdo->prepare(
-                "INSERT INTO users (email, password_hash) VALUES (:email, :password_hash)"
-            );
+            // Insert new user
+            $password_hash = password_hash($password, PASSWORD_DEFAULT);
+            $insert = $pdo->prepare("INSERT INTO users (email, password_hash) VALUES (:email, :password_hash)");
             $insert->execute([
                 ':email' => $email,
-                ':password_hash' => $passwordHash
+                ':password_hash' => $password_hash
+            ]);
+            $user_id = $pdo->lastInsertId();
+
+            // Insert default info
+            $infoInsert = $pdo->prepare("INSERT INTO user_info (user_id, nickname) VALUES (:user_id, :nickname)");
+            $infoInsert->execute([
+                ':user_id' => $user_id,
+                ':nickname' => $nickname
             ]);
 
-            // After successful registration → redirect to login page
-            header("Location: login.php");
+            // Log in the user
+            $_SESSION['user_id'] = $user_id;
+            header("Location: ../index.php");
             exit;
         }
     }
 }
 ?>
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
+    <link rel="stylesheet" href="../assets/style/css.css?v2">
 </head>
 <body>
 
-<h2>Sign Up</h2>
+<div class="header">
+    <div class="navbar">
+        <div class="menu">
+            <a href="../index.php">Home</a>
+        </div>
+    </div>
+</div>
 
-<?php if (!empty($message)): ?>
-    <p><strong><?= htmlspecialchars($message) ?></strong></p>
-<?php endif; ?>
+<div class="register-wrapper">
+    <h2>Create an Account</h2>
 
-<form method="post">
-    <label>Email:<br>
-        <input type="email" name="email" required>
-    </label><br><br>
+    <?php if (!empty($message)): ?>
+        <p style="color: red; font-size: 12px; margin-bottom: 10px;">
+            <?= htmlspecialchars($message) ?>
+        </p>
+    <?php endif; ?>
 
-    <label>password:<br>
-        <input type="password" name="password" required>
-    </label><br><br>
+    <form method="post" class="post-form">
+        <label>Email:
+            <input type="email" name="email" required>
+        </label>
 
-    <button type="submit">Sign Up</button>
-</form>
+        <label>Nickname:
+            <input type="text" name="nickname" required>
+        </label>
 
-<p><a href="login.php">Already have an account? Sign in</a></p>
+        <label>Password:
+            <input type="password" name="password" required>
+        </label>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <div class="small-link">
+        Already have an account? <a href="login.php">Sign in</a>
+    </div>
+</div>
 
 </body>
 </html>

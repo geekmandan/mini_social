@@ -41,28 +41,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Sign In</title>
+    <link rel="stylesheet" href="../assets/style/css.css?v1">
 </head>
 <body>
 
-<h2>Sign In</h2>
+<div class="header">
+    <div class="navbar">
+        <div class="menu">
+            <a href="../index.php">Home</a>
+        </div>
+    </div>
+</div>
 
-<?php if (!empty($message)): ?>
-    <p><strong><?= htmlspecialchars($message) ?></strong></p>
-<?php endif; ?>
+<div class="login-wrapper">
 
-<form method="post">
-    <label>Email:<br>
-        <input type="email" name="email" required>
-    </label><br><br>
+    <h2>Sign In</h2>
 
-    <label>Password:<br>
-        <input type="password" name="password" required>
-    </label><br><br>
+    <?php if (!empty($message)): ?>
+        <div class="login-message"><?= htmlspecialchars($message) ?></div>
+    <?php endif; ?>
 
-    <button type="submit">Sign In</button>
-</form>
+    <form method="post">
+        <label>Email:
+            <input type="email" name="email" required>
+        </label>
 
-<p><a href="register.php">No account? Sign up</a></p>
+        <label>Password:
+            <input type="password" name="password" required>
+        </label>
+
+        <button type="submit">Sign In</button>
+    </form>
+
+    <p class="small-link">
+        <a href="register.php">No account? Sign up</a>
+    </p>
+    
+</div>
+
 
 </body>
 </html>
