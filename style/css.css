@@ -28,6 +28,160 @@ body {
     margin: 0 5px;
 }
 
+/* Centered container */
+.login-wrapper {
+    width: 360px;
+    margin: 80px auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+/* Title */
+.login-wrapper h2 {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Message (error/success) */
+.login-message {
+    background: #fff3cd;
+    border: 1px solid #e0c86d;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+/* Form labels */
+.login-wrapper label {
+    font-size: 13px;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Inputs */
+.login-wrapper input[type="email"],
+.login-wrapper input[type="password"] {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    margin-top: 4px;
+    font-size: 13px;
+}
+
+/* Submit button */
+.login-wrapper button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 8px;
+    border: 1px solid #999;
+    background: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    color: #0073b1;
+}
+
+.login-wrapper button:hover {
+    background: #f5f8fa;
+}
+
+/* "Sign up" link */
+.login-wrapper .small-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.login-wrapper a {
+    color: #0073b1;
+    text-decoration: none;
+}
+
+.login-wrapper a:hover {
+    text-decoration: underline;
+}
+
+/* Already logged in page */
+.logged-in-box {
+    width: 360px;
+    margin: 80px auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.logged-in-box h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.logged-in-box a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #0073b1;
+}
+
+/* Register wrapper */
+.register-wrapper {
+    width: 360px;
+    margin: 80px auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Heading */
+.register-wrapper h2 {
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Form inputs and buttons use same styles as post-form */
+.register-wrapper .post-form input[type="text"],
+.register-wrapper .post-form input[type="email"],
+.register-wrapper .post-form input[type="password"],
+.register-wrapper .post-form button {
+    width: 100%;
+    font-size: 12px;
+    padding: 6px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.register-wrapper .post-form button {
+    cursor: pointer;
+    background: #fff;
+    color: #0073b1;
+    border: 1px solid #ccc;
+}
+
+.register-wrapper .post-form button:hover {
+    background: #f5f8fa;
+}
+
+/* "Sign in" link */
+.register-wrapper .small-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.register-wrapper a {
+    color: #0073b1;
+    text-decoration: none;
+}
+
+.register-wrapper a:hover {
+    text-decoration: underline;
+}
+
+
 /* Main container */
 .profile-container {
     width: 755px;
@@ -71,12 +225,6 @@ body {
 .profile-header .user-info strong {
     font-size: 14px;
     color: #333;
-}
-
-.profile-header .status {
-    font-size: 12px;
-    color: green;
-    padding-top: 3px;
 }
 
 /* Header right buttons */
@@ -143,8 +291,7 @@ body {
 .post-form button,
 .edit-form button,
 .profile-header .right a,
-.profile-header .right button,
-.sidebar .back-button {
+.profile-header .right button {
     background-color: #fff;
     border: 1px solid #ccc;
     font-size: 12px;
@@ -158,8 +305,7 @@ body {
 
 .post-form button:hover,
 .edit-form button:hover,
-.profile-header .right a:hover,
-.sidebar .back-button:hover {
+.profile-header .right a:hover {
     background-color: #f5f8fa;
 }
 
@@ -262,9 +408,47 @@ a:hover {
     text-decoration: none;
 }
 
+/* Guest benefits block */
+.guest-benefits {
+    margin-top: 30px;
+    padding: 18px;
+    border: 1px solid #c6c6c6;
+    background: #fafafa;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.guest-benefits h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #222;
+    font-weight: bold;
+}
+
+.guest-benefits ul {
+    margin-left: 18px;
+    padding-left: 0;
+}
+
+.guest-benefits ul li {
+    margin-bottom: 6px;
+    list-style-type: square;
+    color: #333;
+}
+
+.guest-benefits a {
+    color: #0074d9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.guest-benefits a:hover {
+    text-decoration: underline;
+}
+
 .footer {
     width: 100%;
-    padding: 5px;
+    padding: 10px;
     background-color: #fff;
     border: 1px solid #ccc;
     margin-top: 10px;
