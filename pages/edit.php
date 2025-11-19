@@ -80,6 +80,11 @@ $avatar = $userInfo['avatar'] ?? "/assets/default-avatar.jpg";
             <a href="">Live</a>
             <a href="">New</a>
         </div>
+        <div class="btns-head">
+            <a href="messages.php" class="messages">Messages</a>
+            <a href="settings.php" class="settings">Settings</a>
+            <a href="logout.php" class="logout">Log Out</a>
+        </div>
     </div>
 </div>
 
@@ -119,7 +124,9 @@ $avatar = $userInfo['avatar'] ?? "/assets/default-avatar.jpg";
 
         <!-- Sidebar -->
         <div class="sidebar">
-            <a href="profile.php?id=<?= $user_id ?>" class="back-button">Back</a>
+            <div class="block-sidebar"> 
+                <a href="profile.php?id=<?= $user_id ?>" class="back-button">Back</a>
+            </div>
         </div>
 
     </div>
