@@ -60,35 +60,71 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
+// Avatar logic
+$avatar = $userInfo['avatar'] ?? "/assets/default-avatar.jpg";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Edit Profile</title>
+    <link rel="stylesheet" href="/assets/style/css.css">
 </head>
 <body>
 
-<h2>Edit Profile</h2>
+<div class="header">
+    <div class="navbar">
+        <div class="menu">
+            <a href="../index.php">Home</a>
+            <a href="">Discovery</a>
+            <a href="">Live</a>
+            <a href="">New</a>
+        </div>
+    </div>
+</div>
 
-<form method="post">
+<div class="profile-container">
 
-    <label>Nickname:<br>
-        <input type="text" name="nickname" value="<?= htmlspecialchars($userInfo['nickname'] ?? '') ?>">
-    </label><br><br>
+    <!-- Top banner -->
+    <div class="profile-header">
+        <div class="left">
+            <img src="<?= htmlspecialchars($avatar) ?>" class="avatar" alt="Avatar">
+            <div class="user-info">
+                <strong><?= htmlspecialchars($userInfo['nickname'] ?? 'Not specified') ?></strong>
+                <div class="status">Online</div>
+            </div>
+        </div>
+        <div class="right">
+            <button form="edit-form" type="submit">Save</button>
+            <a href="logout.php" class="logout">Log Out</a>
+        </div>
+    </div>
 
-    <label>About You:<br>
-        <textarea name="bio" rows="4" cols="40"><?= htmlspecialchars($userInfo['bio'] ?? '') ?></textarea>
-    </label><br><br>
+    <div class="profile-main">
 
-    <label>Profession:<br>
-        <input type="text" name="profession" value="<?= htmlspecialchars($userInfo['profession'] ?? '') ?>">
-    </label><br><br>
+        <!-- Edit form container -->
+        <div class="edit-container">
+            <h3>Edit Profile</h3>
+            <form method="post" id="edit-form" class="edit-form">
+                <label class="label">Nickname:</label>
+                <input type="text" name="nickname" value="<?= htmlspecialchars($userInfo['nickname'] ?? '') ?>">
 
-    <button type="submit">Save</button>
-</form>
+                <label class="label">About You:</label>
+                <textarea name="bio"><?= htmlspecialchars($userInfo['bio'] ?? '') ?></textarea>
 
-<p><a href="logout.php">Log Out</a></p>
+                <label class="label">Profession:</label>
+                <input type="text" name="profession" value="<?= htmlspecialchars($userInfo['profession'] ?? '') ?>">
+            </form>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <a href="profile.php?id=<?= $user_id ?>" class="back-button">Back</a>
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>

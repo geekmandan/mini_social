@@ -1,0 +1,273 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #e6ecf0; 
+    color: #333;
+}
+
+/* Header */
+
+.header {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.navbar {
+    width: 755px;
+    margin: 0 auto;
+}
+
+.menu a {
+    margin: 0 5px;
+}
+
+/* Main container */
+.profile-container {
+    width: 755px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+/* Top banner */
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 12px;
+    font-size: 14px;
+}
+
+.title-journal {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.title-journal h2 {
+    font-size: 13px;
+}
+
+.profile-header .left {
+    display: flex;
+    align-items: center;
+}
+
+.profile-header img.avatar {
+    width: 60px;  /* чуть больше */
+    height: 60px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.profile-header .user-info strong {
+    font-size: 14px;
+    color: #333;
+}
+
+.profile-header .status {
+    font-size: 12px;
+    color: green;
+    padding-top: 3px;
+}
+
+/* Header right buttons */
+.profile-header .right a,
+.profile-header .right button {
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: none;
+    color: #0073b1;
+}
+
+.profile-header .right a.logout {
+    color: #333;
+}
+
+/* Main content */
+.profile-main {
+    display: flex;
+    gap: 10px;
+}
+
+/* Posts area */
+.posts {
+    width: 555px;
+}
+
+/* Forms */
+.post-form,
+.edit-container,
+.edit-form {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.post-form textarea,
+.post-form input[type="text"],
+.edit-form textarea,
+.edit-form input[type="text"] {
+    width: 100%;
+    font-size: 12px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    margin-top: 2px;
+    color: #333;
+}
+
+.edit-container {
+    width: 555px;
+}
+
+.post-form textarea,
+.edit-form textarea {
+    height: 50px;
+    resize: none;
+}
+
+/* Buttons */
+.post-form button,
+.edit-form button,
+.profile-header .right a,
+.profile-header .right button,
+.sidebar .back-button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    padding: 4px 8px;
+    cursor: pointer;
+    text-align: center;
+    color: #0073b1;
+    margin-top: 5px;
+    text-decoration: none; 
+}
+
+.post-form button:hover,
+.edit-form button:hover,
+.profile-header .right a:hover,
+.sidebar .back-button:hover {
+    background-color: #f5f8fa;
+}
+
+/* Labels */
+.edit-form label,
+.post-form label {
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 4px 0;
+}
+
+/* Single post */
+.post {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.post small {
+    color: #555;
+}
+
+/* No posts message */
+.posts .no-posts {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-style: italic;
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 258px;
+    height: 100%;
+    margin-top: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 12px;
+    color: #333;
+}
+
+.sidebar h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    padding-bottom: 2px;
+}
+
+.sidebar .info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.sidebar .info-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.sidebar .back-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* Links */
+a {
+    color: #0073b1;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #0073b1;
+    font-size: 12px;
+}
+
+.pagination a:hover {
+    text-decoration: none;
+}
+
+.footer {
+    width: 100%;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 11px;
+}

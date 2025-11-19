@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Ноя 19 2025 г., 08:29
+-- Время создания: Ноя 19 2025 г., 12:44
 -- Версия сервера: 10.4.32-MariaDB
 -- Версия PHP: 8.2.12
 
@@ -63,6 +63,13 @@ CREATE TABLE `user_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Дамп данных таблицы `user_info`
+--
+
+INSERT INTO `user_info` (`id`, `user_id`, `nickname`, `bio`, `profession`, `avatar`) VALUES
+(1, 1, 'German', 'Programmer', 'Software Engineer', NULL);
+
+--
 -- Индексы сохранённых таблиц
 --
 
@@ -107,7 +114,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `user_info`
 --
 ALTER TABLE `user_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
