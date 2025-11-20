@@ -68,7 +68,7 @@ foreach ($users as $user) {
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
-    <link rel="stylesheet" href="assets/style/css.css?v4">
+    <link rel="stylesheet" href="assets/style/css.css?v6">
 </head>
 <body>
 
@@ -124,9 +124,9 @@ foreach ($users as $user) {
 
                         <p><?= nl2br(htmlspecialchars($post['content'])) ?></p>
 
-                        <small style="display: block; margin-top: 6px; color: #555;">
-                            <?= timeAgo($post['created_at']) ?>
-                        </small>
+                        <div class="date-post">
+                         <p><?= timeAgo($post['created_at']) ?></p>
+                        </div>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>

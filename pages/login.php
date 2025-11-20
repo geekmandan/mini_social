@@ -4,7 +4,7 @@ require_once __DIR__ . '/../config/config.php';
 
 // If already logged in — hide the form
 if (isset($_SESSION['user_id'])) {
-    echo "<h2>You are already logged in 👍</h2>";
+    echo "<h2>You are already logged in</h2>";
     echo '<p><a href="../index.php">Go to homepage</a></p>';
     exit;
 }
@@ -20,18 +20,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $stmt->fetch();
 
     if (!$user) {
-        $message = "User not found 😕";
+        $message = "User not found";
     } else {
         if (password_verify($password, $user['password_hash'])) {
 
             // Successful login
             $_SESSION['user_id'] = $user['id'];
 
-            header("Location: edit.php");
+            header("Location: ../index.php");
             exit;
 
         } else {
-            $message = "Incorrect password 😐";
+            $message = "Incorrect password";
         }
     }
 }
