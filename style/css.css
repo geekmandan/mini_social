@@ -154,8 +154,8 @@ a:hover {
 }
 
 .profile-header img.avatar {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 70px;
     border: 1px solid #ccc;
     margin-right: 12px;
     object-fit: cover;
@@ -179,6 +179,11 @@ a:hover {
 
 .profile-header .right a.logout {
     color: #333;
+}
+
+.date-post p {
+    margin-top: 5px;
+    color: #9c9c9c;
 }
 
 /* Title above posts */
@@ -313,7 +318,6 @@ a:hover {
     border: 1px solid #ccc;
     padding: 15px;
     text-align: center;
-    font-style: italic;
     color: #777;
     margin-bottom: 10px;
 }
@@ -334,6 +338,11 @@ a:hover {
     font-size: 13px;
     margin-bottom: 10px;
     font-weight: bold;
+}
+
+.block-friends ul {
+    list-style: none;
+    padding-top: 5px;
 }
 
 .info-row {
