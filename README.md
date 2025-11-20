@@ -9,7 +9,7 @@ Currently, only the basic features are implemented: user registration and login.
 ## Features
 - User registration  
 - User login  
-- (No CSS or additional styling yet)  
+- CSS 
 
 ## Technologies
 - PHP  
@@ -23,3 +23,4 @@ This project is intended for educational purposes.
 
 ## Contact
 For questions or suggestions: [rebcoding@gmail.com]
+
